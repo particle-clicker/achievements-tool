@@ -3,7 +3,6 @@
 import copy
 import json
 from os import path
-from pprint import PrettyPrinter
 
 
 BASE = '../particle-clicker/json/'
@@ -30,8 +29,6 @@ def map_out(prototype, items, levels):
     return [{k: v.format(level=level, levelstring=format_number(level), **item)
              for k, v in prototype.items()}
             for item in items for level in levels]
-
-pp = PrettyPrinter(indent=2)
 
 objects = {
     k: json_from_file(path.join(BASE, v)) for k, v in {
@@ -133,4 +130,4 @@ achievements += map_out(fundingSpentPrototype, [{}],
 for achievement in achievements:
     achievement['threshold'] = int(achievement['threshold'])
 
-pp.pprint(achievements)
+print(json.dumps(achievements))
