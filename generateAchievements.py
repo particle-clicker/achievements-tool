@@ -6,7 +6,7 @@ from os import path
 from pprint import PrettyPrinter
 
 
-BASE = 'PATH TO PARTICLE CLICKER JSON FOLDER'
+BASE = '../particle-clicker/json/'
 
 
 def json_from_file(filename):
@@ -66,7 +66,7 @@ clicksPrototype = {
     'key': 'achievement-clicks-{levelstring}',
     'description': '{levelstring} clicks!',
     'icon': 'fa-hand-o-up',
-    'type': 'count',
+    'type': 'lab',
     'target': 'clicks',
     'threshold': '{level}'
 }
@@ -76,7 +76,7 @@ dataCollectedPrototype = {
     'key': 'achievement-data-collected-{levelstring}',
     'description': '{levelstring} data collected!',
     'icon': 'fa-database',
-    'type': 'count',
+    'type': 'lab',
     'target': 'data',
     'threshold': '{level}'
 }
@@ -84,7 +84,7 @@ fundingCollectedPrototype = {
     'key': 'achievement-funding-collected-{levelstring}',
     'description': 'JTN {levelstring} funding gathered!',
     'icon': 'fa-money',
-    'type': 'count',
+    'type': 'lab',
     'target': 'money',
     'threshold': '{level}'
 }
@@ -92,7 +92,7 @@ dataProcessedPrototype = {
     'key': 'achievement-data-processed-{levelstring}',
     'description': '{levelstring} data processed!',
     'icon': 'fa-hdd',
-    'type': 'count',
+    'type': 'lab',
     'target': 'dataSpent',
     'threshold': '{level}'
 }
