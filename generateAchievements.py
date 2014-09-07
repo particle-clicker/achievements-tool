@@ -45,55 +45,69 @@ researchPrototype = {
     'key': 'achievement-{key}-{level}',
     'description': '{name} research level {level}!',
     'icon': 'fa-cogs',
-    'type': 'research',
-    'target': '{key}',
+    'targetKey': '{key}',
+    'targetProperty': 'level',
     'threshold': '{level}'
 }
 discoveryPrototype = copy.copy(researchPrototype)
 discoveryPrototype['description'] = '{name} discovery!'
+
 workersPrototype = {
     'key': 'achievement-{key}-{level}',
     'description': '{level} {name} working for you!',
     'icon': 'fa-users',
-    'type': 'workers',
-    'target': '{key}',
+    'targetKey': '{key}',
+    'targetProperty': 'hired',
     'threshold': '{level}'
 }
 firstWorkerPrototype = copy.copy(workersPrototype)
 firstWorkerPrototype['description'] = 'The first {name} hired!'
 firstWorkerPrototype['icon'] = 'fa-user'
+
 clicksPrototype = {
     'key': 'achievement-clicks-{levelstring}',
     'description': '{levelstring} clicks!',
     'icon': 'fa-hand-o-up',
-    'type': 'lab',
-    'target': 'clicks',
+    'targetKey': 'lab',
+    'targetProperty': 'clicks',
     'threshold': '{level}'
 }
 firstClickPrototype = copy.copy(clicksPrototype)
 firstClickPrototype['description'] = 'Your first click!'
+
 dataCollectedPrototype = {
     'key': 'achievement-data-collected-{levelstring}',
     'description': '{levelstring} data collected!',
     'icon': 'fa-database',
-    'type': 'lab',
-    'target': 'data',
+    'targetKey': 'lab',
+    'targetProperty': 'dataCollected',
     'threshold': '{level}'
 }
+
 fundingCollectedPrototype = {
     'key': 'achievement-funding-collected-{levelstring}',
     'description': 'JTN {levelstring} funding gathered!',
     'icon': 'fa-money',
-    'type': 'lab',
-    'target': 'money',
+    'targetKey': 'lab',
+    'targetProperty': 'moneyCollected',
     'threshold': '{level}'
 }
+
 dataProcessedPrototype = {
     'key': 'achievement-data-processed-{levelstring}',
     'description': '{levelstring} data processed!',
     'icon': 'fa-hdd',
-    'type': 'lab',
-    'target': 'dataSpent',
+    'targetKey': 'lab',
+    'targetProperty': 'dataSpent',
+    'threshold': '{level}'
+}
+
+fundingSpentPrototype = {
+    'key': 'achievement-funding-spent-{levelstring}',
+    'description': 'JTN {levelstring} funding spent!',
+    'icon': 'fa-money',
+    'targetKey': 'lab',
+    'targetProperty': 'moneySpent',
     'threshold': '{level}'
 }
 
@@ -111,6 +125,8 @@ achievements += map_out(dataCollectedPrototype, [{}],
 achievements += map_out(fundingCollectedPrototype, [{}],
                         [100, 10000, int(1e6), int(1e8), int(1e10)])
 achievements += map_out(dataProcessedPrototype, [{}],
+                        [100, 10000, int(1e6), int(1e8), int(1e10)])
+achievements += map_out(fundingSpentPrototype, [{}],
                         [100, 10000, int(1e6), int(1e8), int(1e10)])
 
 # fix thresholds
