@@ -130,4 +130,4 @@ achievements += map_out(fundingSpentPrototype, [{}],
 for achievement in achievements:
     achievement['threshold'] = int(achievement['threshold'])
 
-print(json.dumps(achievements))
+print(json.dumps(achievements, indent='  '))
