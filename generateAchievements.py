@@ -18,7 +18,7 @@ def format_number(num, digits=0):
     """ Give long numbers an SI prefix. """
     formatstring = '{{:.{}f}}{{}}'.format(digits)
     prefixes = [(1e24, 'Y'), (1e21, 'Z'), (1e18, 'E'), (1e15, 'P'),
-                (1e12, 'T'), (1e9, 'G'), (1e6, 'M'), (1e3, 'k')]
+                (1e12, 'T'), (1e9, 'G'), (1e6, 'M'), (1e3, 'k'), (1, '')]
     for magnitude, label in prefixes:
         if num >= magnitude:
             return formatstring.format(num / magnitude, label)
